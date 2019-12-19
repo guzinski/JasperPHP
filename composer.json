@@ -1,15 +1,9 @@
 {
-    "name": "quilhasoft/jasperphp",
+    "name": "guzinski/jasperphp",
     "type": "library",
     "description": "Pure PHP library to read JRXML files made with 'JasperSoft Studio' and generate reports in PDF",
     "keywords": ["report", "jrxml", "jaspersoft", "pdf"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Rogerio Muniz de Castro",
-            "email": "rogerio@quilhasoft.net"
-        }
-    ],
     "autoload": {
         "psr-4" : {
             "JasperPHP\\" : ["src"]
