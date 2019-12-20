@@ -33,16 +33,17 @@ class Report extends Element {
 
 
     public function __construct($xmlFile = null,$param) {
-        if(file_exists(self::$defaultFolder.DIRECTORY_SEPARATOR.$xmlFile)) {
+        if(file_exists(dirname(__DIR__).self::$defaultFolder.DIRECTORY_SEPARATOR.$xmlFile)) {
             $xmlFile = file_get_contents(self::$defaultFolder.DIRECTORY_SEPARATOR.$xmlFile);
+        } elseif (file_exists($xmlFile)) {
+            $xmlFile = file_get_contents($xmlFile);
         }
         $keyword = "<queryString>
         <![CDATA[";
         $xmlFile = str_replace($keyword, "<queryString><![CDATA[", $xmlFile);
         $xml = simplexml_load_string($xmlFile);
         $this->charge($xml,$param);
-        //$this->objElement = $xml;
-    }
+   }
 
     public function charge($ObjElement,$param) {
 
